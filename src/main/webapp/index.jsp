@@ -31,5 +31,28 @@
 								 out.println(new java.util.Date());
 						   }%></h1>
 	
+	
+	
+	
+	<!-- DECLARATION -->
+	<%!int raio = 2; %>
+	
+	<%!Double calculaDiametroDoCirculo(double raio){
+    	return raio * 2;
+	   }
+	%>
+	
+	<!-- SCRIPTLET -->
+	<% if(raio < 10){
+			out.println(calculaDiametroDoCirculo(raio));
+		}else{
+			out.println("O raio deve ser menor que 10");
+		}
+	%>
+	
+	
+	<!-- EXPRESSION -->
+	<h1>O raio é: <%= calculaDiametroDoCirculo(raio) %></h1>
+	
 </body>
 </html>
