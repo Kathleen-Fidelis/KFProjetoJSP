@@ -1,4 +1,6 @@
 <%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -33,6 +35,7 @@
 	
 	
 	
+	<!-- PRIMEIRA PARTE -->
 	
 	<!-- DECLARATION -->
 	<%!int raio = 2; %>
@@ -53,6 +56,40 @@
 	
 	<!-- EXPRESSION -->
 	<h1>O raio é: <%= calculaDiametroDoCirculo(raio) %></h1>
+	
+	
+	
+	<!-- SEGUNDA PARTE -->
+	
+	<!-- DECLARATION -->
+		<%! Calendar cal = Calendar.getInstance();%>
+		
+		<%!int segundos(){
+			return cal.get(Calendar.SECOND);
+		}%>
+		
+		<%!String par = "par";%>
+		<%!String impar = "impar";%>
+		
+		
+	<!-- SCRIPLET -->
+		<%if(segundos() % 2 == 0){
+			out.println(par);
+		}else{
+			out.println(impar);
+		}%>
+		
+		
+		
+	<!-- EXPRESSION -->
+		<h1>São <%=segundos()%> segundos</h1>
+		
+	<!-- END EXPRESSION -->
+
+	
+	
+	
+	
 	
 </body>
 </html>
